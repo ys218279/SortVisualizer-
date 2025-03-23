@@ -6,7 +6,7 @@ SortVisualiser is a simple web application that visually demonstrates the **Inse
 ## Features  
 - Accepts a comma-separated list of numbers as input  
 - Implements **Insertion Sort** in JavaScript  
-- Displays the sorting process step by step  
+- Displays the sorting process step-by-step  
 - Simple and interactive user interface  
 
 ## How to Use  
@@ -20,5 +20,6 @@ SortVisualiser is a simple web application that visually demonstrates the **Inse
 - **JavaScript** – Implementation of the Insertion Sort algorithm  
 
 ## Future Improvements  
-- Add animations for better visualization  
+- Add animations for better visualization
+- Shows every sort step without having to click sort automatically  
 - Support other sorting algorithms  
