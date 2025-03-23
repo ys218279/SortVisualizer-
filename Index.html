@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort</title>
+</head>
+
+<body>
+    <center>
+        <h1>Insertion sort in action! </h1>
+        <label for="inputArray">Enter an array (comma-separated):</label>
+        <textarea id="inputArray" rows="1" cols="30"></textarea>
+        <br>
+        <button onclick="sortUserArray()">Sort</button>
+        <div id="resultContainer"></div>
+
+        <script>
+            let buttonCounter = 0;
+            let index = 0;
+
+            function insertionSort(arr) {
+                for (let i = 1; i <= index; i++) {
+                    let current = arr[i];
+                    let j = i - 1;
+
+                    while (j >= 0 && arr[j] > current) {
+                        arr[j + 1] = arr[j];
+                        j--;
+                    }
+                    arr[j + 1] = current;
+                }
+            }
+
+            function sortUserArray() {
+                let userInput = document.getElementById("inputArray").value;
+                let inputArray = userInput.split(",").map(Number);
+                let sortedArray = inputArray.slice();
+
+                if (index < sortedArray.length) {
+                    insertionSort(sortedArray);
+                    console.log("Array after sorting one element:", sortedArray.slice());
+                    displaySortedArray(sortedArray);
+                    index++;
+                } else {
+                    console.log("Sorting complete");
+                }
+            }
+
+            function displaySortedArray(sortedArray) {
+                let resultElement = document.createElement("p");
+                resultElement.textContent = "Sorted Array: " + sortedArray.join(", ");
+                document.getElementById("resultContainer").appendChild(resultElement);
+            }
+        </script>
+    </center>
+</body>
+
+</html>
